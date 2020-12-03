@@ -14,8 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-// Package v1alpha1 contains the OLM related resources of the in-cluster provider.
+// Package v1alpha1 contains the database resources of the in-cluster provider.
 // +kubebuilder:object:generate=true
-// +groupName=operator.in-cluster.crossplane.io
+// +groupName=database.in-cluster.crossplane.io
 // +versionName=v1alpha1
 package v1alpha1
