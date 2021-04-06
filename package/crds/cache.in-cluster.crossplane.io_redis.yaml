@@ -52,6 +52,32 @@ spec:
               type: string
             forProvider:
               description: RedisParameters define the specific parameters for a Redis instance
+              properties:
+                memoryLimit:
+                  description: MemoryLimit states the maximum amount of memory available to the pod in the deployment
+                  type: string
+                passwordSecretRef:
+                  description: PasswordSecretRef references the secret that contains the password used in the creation of this redis instance. If no reference is given, the redis instance will be exposed with no password.
+                  properties:
+                    key:
+                      description: The key to select.
+                      type: string
+                    name:
+                      description: Name of the secret.
+                      type: string
+                    namespace:
+                      description: Namespace of the secret.
+                      type: string
+                  required:
+                  - key
+                  - name
+                  - namespace
+                  type: object
+                redisConf:
+                  additionalProperties:
+                    type: string
+                  description: ConfigVariables allows users to put arbitrary environment variables for the redis instance.
+                  type: object
               type: object
             providerConfigRef:
               description: ProviderConfigReference specifies how the provider that will be used to create, observe, update, and delete this managed resource should be configured.
