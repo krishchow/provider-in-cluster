@@ -21,6 +21,7 @@ import (
 	"k8s.io/client-go/util/workqueue"
 	ctrl "sigs.k8s.io/controller-runtime"
 
+	"github.com/crossplane-contrib/provider-in-cluster/pkg/controller/cache/redis"
 	"github.com/crossplane-contrib/provider-in-cluster/pkg/controller/config"
 	"github.com/crossplane-contrib/provider-in-cluster/pkg/controller/database/postgres"
 	"github.com/crossplane-contrib/provider-in-cluster/pkg/controller/olm/operator"
@@ -33,6 +34,8 @@ func Setup(mgr ctrl.Manager, l logging.Logger, rl workqueue.RateLimiter) error {
 		config.Setup,
 		postgres.SetupPostgres,
 		operator.SetupOperator,
+		redis.SetupRedis,
+
 	} {
 		if err := setup(mgr, l, rl); err != nil {
 			return err
