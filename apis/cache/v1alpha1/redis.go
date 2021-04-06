@@ -7,7 +7,6 @@ import (
 
 // RedisParameters define the specific parameters for a Redis instance
 type RedisParameters struct {
-
 }
 
 // An RedisSpec defines the desired state of a Redis instance.
@@ -18,7 +17,6 @@ type RedisSpec struct {
 
 // RedisExternalStatus keeps the state for the external resource
 type RedisExternalStatus struct {
-
 }
 
 // An RedisStatus represents the observed state of a Redis instance.
