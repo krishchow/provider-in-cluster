@@ -1,0 +1,16 @@
+apiVersion: cache.in-cluster.crossplane.io/v1alpha1
+kind: Redis
+metadata:
+  name: "redis"
+  namespace: "default"
+spec:
+  forProvider:
+    passwordSecretRef:
+      namespace: default
+      name: testsecret
+      key: password
+  providerConfigRef:
+    name: "provider-in-cluster"
+  writeConnectionSecretToRef:
+    name: "out-secret"
+    namespace: "default"
