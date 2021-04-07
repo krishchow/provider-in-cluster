@@ -35,7 +35,6 @@ func Setup(mgr ctrl.Manager, l logging.Logger, rl workqueue.RateLimiter) error {
 		postgres.SetupPostgres,
 		operator.SetupOperator,
 		redis.SetupRedis,
-
 	} {
 		if err := setup(mgr, l, rl); err != nil {
 			return err
