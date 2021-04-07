@@ -143,3 +143,8 @@ func IntValue(i *int) int {
 func Int32(i int32) *int32 {
 	return &i
 }
+
+// Boolean is a utility function converting a bool to a pointer
+func Boolean(b bool) *bool {
+	return &b
+}
